@@ -1,6 +1,0 @@
-<Solution>
-  <Project Path="Carrito.Business/Carrito.Business.csproj" />
-  <Project Path="Carrito.Servicios/Carrito.Servicios.csproj" />
-  <Project Path="CarritoAPI/Carrito.API.csproj" />
-  <Project Path="CarritoModels/Carrito.Repository.csproj" />
-</Solution>

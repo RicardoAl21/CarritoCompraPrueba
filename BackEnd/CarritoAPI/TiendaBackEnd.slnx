@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="TiendaNegocio/Tienda.Negocio.csproj" />
+  <Project Path="TiendaAPI/Tienda.API.csproj" />
+  <Project Path="TiendaRepositorio/Tienda.Repositorio.csproj" />
+</Solution>
