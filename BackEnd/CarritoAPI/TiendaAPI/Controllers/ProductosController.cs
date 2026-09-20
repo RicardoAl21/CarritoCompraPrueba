@@ -1,11 +1,11 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Swashbuckle.AspNetCore.Annotations;
+//using Swashbuckle.AspNetCore.Annotations;
 
 namespace CarritoAPI.Controllers
 {
     [ApiController, Route("api/products")]
-    [SwaggerTag("Controlador para funciones de productos")]
+   // [SwaggerTag("Controlador para funciones de productos")]
     public class ProductosController : ControllerBase
     {
         [HttpGet]

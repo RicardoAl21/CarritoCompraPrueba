@@ -1,23 +1,30 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Swashbuckle.AspNetCore.Annotations;
+using Tienda.Negocio.Contratos;
+using Tienda.Negocio.DTO;
 
-namespace CarritoAPI.Controllers
+namespace Tienda.API.Controllers
 {
     [ApiController, Route("api/auth")]
-    [SwaggerTag("Controlador para funciones de autenticación de usuarios")]
-    public class AuthController : ControllerBase
+    public class AuthController(IAutenticacion autenticacion) : ControllerBase
     {
-        [HttpPost("login"), AllowAnonymous]
-        //[ProducesResponseType(typeof(Respuesta<string>), StatusCodes.Status200OK)]
-        //[ProducesResponseType(typeof(Respuesta<ErrorModel>), StatusCodes.Status400BadRequest)]
-        //[ProducesResponseType(typeof(Respuesta<ErrorModel>), StatusCodes.Status500InternalServerError)]
+        /// <summary>
+        /// Permite a un usuario iniciar sesión en el sistema.
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
+        [HttpPost("login")]
+        [AllowAnonymous]
+        [ProducesResponseType(typeof(Response<string>), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(Response<ErrorModel>), StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(typeof(Response<ErrorModel>), StatusCodes.Status500InternalServerError)]
         [Consumes("application/json")]
         [Produces("application/json")]
-        public async Task<IActionResult> Login(/*[FromBody] LoginRequest request*/)
+        public async Task<IActionResult> Login([FromBody] LoginRequest request)
         {
-            
-            return Ok();
+            var respuesta = await autenticacion.ValidarUsuario(request.Correo, request.Password);
+
+            return Ok(respuesta);
         }
     }
 }

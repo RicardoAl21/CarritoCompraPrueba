@@ -6,13 +6,19 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <UserSecretsId>30e44ee2-67a0-46ae-b8d6-a4e10ed45c5a</UserSecretsId>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+	 <GenerateDocumentationFile>true</GenerateDocumentationFile>
+	 <SatelliteResourceLanguages>es</SatelliteResourceLanguages>
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="10.0.12" />
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.12" />
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.24.2-preview.1" />
-    <PackageReference Include="Swashbuckle.AspNetCore" Version="10.2.3" />
-    <PackageReference Include="Swashbuckle.AspNetCore.Annotations" Version="10.2.3" />
+    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="10.2.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TiendaNegocio\Tienda.Negocio.csproj" />
   </ItemGroup>
 
 </Project>

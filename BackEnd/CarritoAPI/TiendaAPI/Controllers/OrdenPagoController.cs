@@ -1,10 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Swashbuckle.AspNetCore.Annotations;
+//using Swashbuckle.AspNetCore.Annotations;
 
 namespace CarritoAPI.Controllers
 {
     [ApiController, Route("api/orders")]
-    [SwaggerTag("Controlador para funciones de autenticación de usuarios")]
+    //[SwaggerTag("Controlador para funciones de autenticación de usuarios")]
     public class OrdenPagoController : ControllerBase
     {
         [HttpPost]
